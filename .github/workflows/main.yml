@@ -12,7 +12,8 @@ jobs:
 
     strategy:
       matrix:
-        WORKER_INDEX: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+        WORKER_INDEX: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
+                       10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
 
     steps:
       - name: Checkout repo
@@ -31,8 +32,7 @@ jobs:
       - name: Jalankan worker Gemini
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}   # diambil dari Secrets
-          WORKER_INDEX: ${{ matrix.WORKER_INDEX }}        # index worker GEMINI_API_KEY
+          WORKER_INDEX: ${{ matrix.WORKER_INDEX }}        # index worker
         run: |
           echo "🚀 Start worker index: $WORKER_INDEX"
           python worker_gemini.py
-          
