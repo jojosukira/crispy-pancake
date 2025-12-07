@@ -12,12 +12,12 @@ from google import genai  # SDK baru: google-genai
 # ============================
 JOBS_API_URL = "https://leamarie-yoga.de/jobs_api.php"  # GANTI ke URL jobs_api.php kamu
 
-MIN_SECONDS_PER_REQUEST = 8
+MIN_SECONDS_PER_REQUEST = 30
 MAX_RETRIES_PER_TITLE = 3
 DEFAULT_QUOTA_SLEEP_SECONDS = 60
 
 # Batas maksimal request ke Gemini per API key / worker
-MAX_REQUESTS_PER_API = 250  # <<< BATAS REQUEST PER API KEY
+MAX_REQUESTS_PER_API = 165  # <<< BATAS REQUEST PER API KEY
 
 
 # ============================
@@ -323,4 +323,5 @@ def main():
 
 
 if __name__ == "__main__":
+
     main()
